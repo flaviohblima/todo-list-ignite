@@ -1,0 +1,101 @@
+.listitem {
+  list-style: none;
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  display: flex;
+  gap: 0.75rem;
+}
+
+.listitem:hover {
+  background-color: var(--gray-400);
+}
+
+.listitem label {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  padding-left: 2.25rem;
+}
+
+
+.listitem label p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.checkbox~span {
+  position: absolute;
+  top: 0.125rem;
+  left: 0;
+  min-height: 1.125rem;
+  min-width: 1.125rem;
+  max-height: 1.125rem;
+  max-width: 1.125rem;
+  border: none;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+}
+
+
+.checkbox:checked~span {
+  border-width: 0px;
+  background-color: var(--purple-dark);
+}
+
+.checkbox~span:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 45%;
+  left: 50%;
+  height: 0.25rem;
+  width: 0.5rem;
+  border: solid var(--gray-100);
+  border-width: 0 0 2px 2px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.checkbox:checked~span:after {
+  display: block;
+}
+
+.checkbox:checked~span~p {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+/* --- */
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  border-radius: 0.125rem;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.deleteButton svg {
+  height: 0.875rem;
+}
+
+.deleteButton:hover {
+  color: var(--purple-dark);
+}
